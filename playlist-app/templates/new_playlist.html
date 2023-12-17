@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <h1>Add a New Playlist</h1>
+
+  <form method="POST" action="{{ url_for('add_playlist') }}" class="my-4">
+    {{ form.hidden_tag() }}
+
+    <div class="mb-3">
+      {{ form.name.label(class="form-label") }}
+      {{ form.name(class="form-control") }}
+    </div>
+
+    <div class="mb-3">
+      {{ form.description.label(class="form-label") }}
+      {{ form.description(class="form-control") }}
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add Playlist</button>
+  </form>
+
+{% endblock %}
